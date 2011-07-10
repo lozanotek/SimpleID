@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHost", "SimpleHost\SimpleHost.csproj", "{F94C55EF-1BD3-4D5E-AAC4-40F352E36BA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleID", "SimpleID\SimpleID.csproj", "{14DE9780-CCA3-4C27-BC0F-680277621DCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F94C55EF-1BD3-4D5E-AAC4-40F352E36BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F94C55EF-1BD3-4D5E-AAC4-40F352E36BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F94C55EF-1BD3-4D5E-AAC4-40F352E36BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F94C55EF-1BD3-4D5E-AAC4-40F352E36BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DE9780-CCA3-4C27-BC0F-680277621DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DE9780-CCA3-4C27-BC0F-680277621DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DE9780-CCA3-4C27-BC0F-680277621DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DE9780-CCA3-4C27-BC0F-680277621DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
