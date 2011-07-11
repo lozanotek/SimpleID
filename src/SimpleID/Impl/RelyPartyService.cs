@@ -1,30 +1,19 @@
 ﻿namespace SimpleID {
     using System;
-    using DotNetOpenAuth.OpenId;
+    using System.Web;
     using DotNetOpenAuth.OpenId.Extensions.SimpleRegistration;
     using DotNetOpenAuth.OpenId.RelyingParty;
     using SimpleID.Config;
 
+
     public class RelyPartyService : IRelyPartyService {
-        private static readonly object __lock = new object();
-        public const string RedirectUrlKey = "redirectUrl";
-        private static OpenIdRelyingParty relyParty;
+        const string RedirectUrlKey = "redirectUrl";
+        static OpenIdRelyingParty relyParty = new OpenIdRelyingParty();
 
         public virtual IUrlProvider UrlProvider { get; set; }
         
         public virtual OpenIdRelyingParty RelyParty {
-            get {
-                if(relyParty == null) {
-                    lock(__lock) {
-                        if(relyParty == null) {
-                            relyParty = SimpleRuntime.Instance.RelyingParty();
-                        }
-                    }
-                }
-
-                return relyParty;
-            }
-
+            get { return relyParty; }
             set { relyParty = value; }
         }
         
@@ -62,16 +51,11 @@
         }
 
         public virtual IAuthenticationRequest CreateRequest(AuthRequest authRequest) {
-            var returnToBuilder = new UriBuilder(authRequest.RequestUri) {                                                                 
-                Query = "", 
-                Fragment = "", 
-                Path = UrlProvider.CallbackUrl
-            };
+            var response = HttpContext.Current.Response;
+            var returnTo = new Uri(authRequest.RequestUri, response.ApplyAppPathModifier("~/openid/returnto"));
+            var returnToBuilder = new UriBuilder(returnTo) { Path = "/" };
 
-            var returnTo = returnToBuilder.Uri;
-            returnToBuilder.Path = "/";
-
-            Realm realm = returnToBuilder.Uri;
+            var realm = returnToBuilder.Uri;
             var request = RelyParty.CreateRequest(authRequest.ProviderUrl, realm, returnTo);
 
             // Get the common information for user
@@ -83,11 +67,8 @@
 
             request.AddExtension(claimsRequest);
 
-            var returnUrl = CleanUpRedirectUrl(authRequest.RedirectUrl);
-
-            if (returnUrl != null) {
-                request.SetCallbackArgument(RedirectUrlKey, returnUrl);
-            }
+            var returnUrl = CleanUpRedirectUrl(authRequest.RedirectUrl) ?? "/";
+            request.SetCallbackArgument(RedirectUrlKey, returnUrl);
 
             return request;
         }
@@ -101,7 +82,7 @@
             // HACK: For some reason, OpenID on the first handshake appends a ',' on the Return URL parameter.
             // We need to remove this ',' in order to create a valid return URL to then process in our end
             // when we come back from authentication.
-            if (redirectUrl != null) {
+            if (!string.IsNullOrWhiteSpace(redirectUrl)) {
                 var index = redirectUrl.IndexOf(",");
                 if (index > 0) {
                     redirectUrl = redirectUrl.Substring(0, index);

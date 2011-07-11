@@ -4,10 +4,12 @@
     using DotNetOpenAuth.OpenId.RelyingParty;
 
     public class SimpleRuntime {
-        private static readonly SimpleRuntime instance = new SimpleRuntime();
-        private static readonly IDictionary<Type, Func<object>> typeCache = new Dictionary<Type, Func<object>>();
+        static SimpleRuntime instance = new SimpleRuntime();
+        static IDictionary<Type, Func<object>> typeCache;
 
         private SimpleRuntime() {
+            typeCache = new Dictionary<Type, Func<object>>();
+
             this
             .RelyPartyService<RelyPartyService>()
             .AuthenticationService<AuthenticationService>()
@@ -21,6 +23,7 @@
     
         internal void ToCache<TService>(Type key, Func<TService> resolver) 
             where TService :class {
+            
             typeCache[key] = resolver;
         }
 

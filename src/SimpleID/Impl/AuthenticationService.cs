@@ -1,13 +1,18 @@
 ﻿namespace SimpleID {
-    using System.Web.Security;
+    using System;
 
     public class AuthenticationService : IAuthenticationService {
         public void SetAuthenticationTicket(UserClaim userClaim) {
-            FormsAuthentication.SetAuthCookie(userClaim.Username, false);
+            var provider = FormsAuthCookieProvider.CurrentProvider;
+            if (provider == null) {
+                throw new InvalidOperationException("FormsAuthentication Cookie Provider is null.");
+            }
+
+            provider(userClaim);
         }
 
         public string GetDefaultRedirectUrl() {
-            return FormsAuthentication.DefaultUrl;
+            return "/";
         }
     }
 }

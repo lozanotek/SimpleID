@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "SimpleID - Invalid Response";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OpenID - Invalid Response</h2>
+<p>Could not get a valid OpenID Claim Response from: <strong>@Model.Identifier</strong></p>
+<p>Please retry another <a href="@Url.Action("index")">OpenID Provider</a>.</p>

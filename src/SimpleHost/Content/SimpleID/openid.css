@@ -1,0 +1,89 @@
+﻿
+#openid-url-input {
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.large {
+    font-size: 140%;
+}
+
+.openid-identifier {
+    background: url("openid-inputicon.png") no-repeat scroll left center transparent;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 32px;
+}
+
+#openid_choice {
+    margin-top: 10px;
+    display: none;
+}
+#openid_input_area {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 35px;
+    clear: both;
+}
+#openid_username {
+    margin-right: 5px;
+}
+#openid_btns, #openid_btns br {
+    margin-left: 30px;
+    clear: both;
+}
+#openid_highlight {
+    padding: 3px;
+    background-color: #FFFCC9;
+    float: left;
+}
+.openid_large_btn {
+    width: 100px;
+    height: 60px;
+    border: 2px solid #DDD;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    margin: 3px;
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 2px 2px 4px #ddd;
+    -moz-box-shadow: 2px 2px 4px #ddd;
+    -webkit-box-shadow: 2px 2px 4px #ddd;
+}
+.openid_large_btn:hover {
+    margin: 4px 0 0 6px;
+    border: 2px solid #999;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.openid_small_btn {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #DDD;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    margin: 3px;
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 2px 2px 4px #ddd;
+    -moz-box-shadow: 2px 2px 4px #ddd;
+    -webkit-box-shadow: 2px 2px 4px #ddd;
+}
+.openid_small_btn:hover {
+    margin: 4px 0 0 6px;
+    border: 2px solid #999;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+a.openid_large_btn:focus {
+    outline: none;
+}
+a.openid_large_btn:focus {
+    -moz-outline-style: none;
+}
+.openid_selected {
+    border: 4px solid #DDD;
+}

@@ -54,7 +54,9 @@
     <Compile Include="Config\UrlProviderExtensions.cs" />
     <Compile Include="Impl\AuthenticationService.cs" />
     <Compile Include="IAuthenticationService.cs" />
+    <Compile Include="Impl\FormsAuthCookieProvider.cs" />
     <Compile Include="Impl\UrlProvider.cs" />
+    <Compile Include="InvalidClaim.cs" />
     <Compile Include="IUrlProvider.cs" />
     <Compile Include="IRelyPartyService.cs" />
     <Compile Include="Controllers\OpenIdController.cs" />

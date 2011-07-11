@@ -1,12 +1,13 @@
 ﻿namespace SimpleID.Modules {
     using System;
     using System.Web;
+    using SimpleID.Config;
 
     public class XrdsModule : IHttpModule {
-        public UrlProvider UrlProvider { get; private set; }
+        public IUrlProvider UrlProvider { get; set; }
 
-        public XrdsModule(UrlProvider urlProvider) {
-            UrlProvider = urlProvider;
+        public XrdsModule() {
+            UrlProvider = UrlProvider ?? SimpleRuntime.Instance.UrlProvider();
         }
 
         public void Init(HttpApplication context) {
@@ -19,7 +20,7 @@
             var response = context.Response;
             var request = context.Request;
 
-            var absoluteUrl = new Uri(request.Url, UrlProvider.XrdsUrl).AbsoluteUri;
+            var absoluteUrl = new Uri(request.Url, response.ApplyAppPathModifier(UrlProvider.XrdsUrl)).AbsoluteUri;
             response.AppendHeader("X-XRDS-Location", absoluteUrl);
         }
 
