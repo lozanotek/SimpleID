@@ -1,0 +1,12 @@
+<configuration>
+    <system.web>
+        <httpModules>
+          <add name="SimpleIDXRDS" type="SimpleID.Modules.XrdsModule, SimpleID"/>
+        </httpModules>
+    </system.web>
+    <system.webServer>
+        <modules>
+          <add name="SimpleIDXRDS" type="SimpleID.Modules.XrdsModule, SimpleID"/>            
+        </modules>
+    <system.webServer>
+</configuration>
