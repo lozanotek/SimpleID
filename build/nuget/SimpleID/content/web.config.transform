@@ -8,5 +8,5 @@
         <modules>
           <add name="SimpleIDXRDS" type="SimpleID.Modules.XrdsModule, SimpleID"/>            
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
