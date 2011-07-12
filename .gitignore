@@ -24,6 +24,13 @@ syntax: glob
 *.scc
 *.docstates
 *.[Rr]e[Ss]harper
+*.nupkg
+
+build/nuget/binaries
+build/nuget/SimpleID/src
+build/nuget/SimpleID/lib
+build/nuget/SimpleID/content
+
 [Uu]pgrade[Ll]og*.xml
 [Bb]in
 [Db]ebug*/

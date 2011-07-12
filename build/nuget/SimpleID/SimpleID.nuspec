@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+        <id>SimpleID</id>
+        <version>1.0</version>
+        <authors>Javier Lozano</authors>
+        <owners>Javier Lozano</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <projectUrl>http://github.com/lozanotek/simpleid</projectUrl>
+        <iconUrl>https://github.com/lozanotek/simpleid/raw/master/build/nuget/images/openid.png</iconUrl>
+        <licenseUrl>https://github.com/lozanotek/simpleid/blob/master/LICENSE.txt</licenseUrl>
+        <tags>ASP.NET MVC OpenID DotNetOpenAuth</tags>
+        <description>SimpleID is a plugin for ASP.NET MVC that provides a simple Relying Party implementation for OpenID.</description>
+        <summary>SimpleID uses DotNetOpenAuth to implement a simple Relying Party for consumers to utilize within their ASP.NET MVC applications.</summary>
+        <language>en-US</language>
+        <dependencies>
+            <dependency id="DotNetOpenAuth" version="3.4.7.11121" />
+        </dependencies>
+    </metadata>
+</package>

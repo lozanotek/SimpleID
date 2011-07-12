@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHost", "SimpleHost\Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleID", "SimpleID\SimpleID.csproj", "{14DE9780-CCA3-4C27-BC0F-680277621DCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{29311D46-A36B-4BDC-B703-9696BD52CB40}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\nuget\packages.bat = ..\build\nuget\packages.bat
+		..\build\nuget\SimpleID\SimpleID.nuspec = ..\build\nuget\SimpleID\SimpleID.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

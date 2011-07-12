@@ -1,0 +1,1 @@
+nuget push SimpleID.%1.nupkg
